@@ -1,0 +1,263 @@
+:root{
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    font-family:  sans-serif;
+    overflow-x: hidden;
+
+}
+
+nav{
+    display: flex;
+    background-color: var(--bg-color);
+    justify-content: space-around;
+    height: 70px;
+    align-items: center;
+    color: var(--text-color);
+    position: sticky;
+    top:0;
+    z-index: 1;
+    
+}
+nav .logo h1{
+    font-family: 'Bebas Neue' , sans-serif;
+    letter-spacing: 1px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+nav ul li a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+nav ul li a:hover{
+    color:var(--main-color);
+}
+
+/*hamburger toogle*/
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -5px;
+    top:-3px;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: all 0.5s;
+
+}
+
+/*hamburger menu animation*/
+.menu-toggle span:nth-child(2){
+    background-color: var(--main-color);
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(3){
+    background-color: var(--main-color);
+}
+.menu-toggle span:nth-child(4){
+    background-color: var(--main-color);
+    transform-origin: 0 100%;
+}
+ 
+
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg)translate(-1px, -1px);
+    
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+h1{
+    font-family:'pacifico' , cursive ;
+}
+h2{
+    font-family: 'pacifico' , cursive ;
+}
+
+
+
+
+
+/*responsiv ukuran tablet*/
+@media screen and (max-width: 768px){
+    nav ul{
+        width: 50%; 
+    }
+}
+ /*ukuran mobile*/
+ @media screen and (max-width: 576px){
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right:0;
+        top:0;
+        width: 40%;
+        height: 90vh;
+        border-bottom-left-radius: 20px;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: #496496;
+        transform: translateX(100%);
+        transition: all 1.5s;
+        opacity: 0;
+        
+    }
+
+    nav ul.slide{
+        transform:translateX(0);
+        opacity: 1; 
+    }
+    nav ul li a{
+        color:var(--text-color);
+        border: .2rem solid var(--main-color);
+        background: transparent;
+        border-radius: 20px;
+        padding: 20px;
+        transition: all 1s;
+        font-weight: 700;
+
+    }
+    nav ul li a:hover{
+        background-color: var(--main-color);
+        color:white;
+        box-shadow: 0 0 1rem var(--main-color);
+
+
+    }
+    .contact form .input-box input,
+    .contact form textarea {
+        min-width: 100%;
+    }
+
+ }
+
+.card{
+    border-radius: 60px;
+    overflow: hidden;
+}
+.jumbotron{
+    padding-top:5rem;
+    background-color: var(--second-bg-color);
+    text-align: center;
+    color: var(--text-color)
+}
+img{
+    
+    border-radius: 50px;
+    margin-bottom: 20px;
+    border: .2rem solid var(--text-color);
+}
+
+.display-4{
+    margin-top:40px;
+}
+.project{
+    background-color: var(--second-bg-color);
+}
+.project h2{
+    margin-bottom: 5rem;
+    text-align: center;
+    color:var(--text-color)
+
+}
+.project-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:2rem;
+}
+.project-container .project-box{
+    margin: 20px 25px;
+    flex: 1 1 30rem;
+    background-color: var(--second-bg-color); 
+    padding: 3rem 2rem 4rem;
+    text-align: center;
+    border: .2rem solid var(--text-color);
+    border-radius: 20px;
+    color:var(--text-color);
+}
+.btn{
+    color:var(--text-color);
+    border: .2rem solid var(--main-color);
+    background: transparent;
+    border-radius: 20px;
+}
+.btn:hover{
+    background-color: var(--main-color);
+    color:#fff;
+    box-shadow: 0 0 1rem var(--main-color);
+}
+.contact{
+    background-color: var(--second-bg-color);
+    padding-bottom: 10px;
+}
+.heading{
+    color:var(--text-color)
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1rem;
+    background: transparent;
+    color:var(--text-color);
+    margin: .3rem 0;
+    border-radius: 20px;  
+}
+.contact form .input-box input{
+    width:49%;
+}
